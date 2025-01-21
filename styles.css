@@ -13,14 +13,12 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: url('header-bg.jpg') no-repeat center center / cover; /* Background image */
-    background-blend-mode: overlay; /* Overlay effect for dimness */
-    color: white;
+    background: url('header-bg.jpg') no-repeat center center / cover;
+    color: black;
     padding: 40px 0;
-    z-index: 10;
+    z-index: 1000;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
 }
 
 header::before {
@@ -30,128 +28,34 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.5); /* Dim the background with white overlay */
+    background: rgba(255, 255, 255, 0.6); /* Add dim overlay */
     z-index: 1;
 }
 
-header h1,
-header p,
-header nav {
+header h1, header p, header nav {
     position: relative;
-    z-index: 2; /* Ensure text is above the overlay */
+    z-index: 2;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: black; /* Bright black text */
-    text-shadow: none; /* No shadow for cleaner look */
-}
-
-header p {
-    margin: 5px 0;
-    font-size: 1rem;
-    color: black; /* Bright black text */
-}
-
-/* Navigation Links */
-header nav {
-    margin-top: 10px;
-}
-
-header .nav-link {
-    margin: 0 10px;
-    color: black; /* Bright black for navigation links */
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: all 0.3s ease;
-}
-
-header .nav-link:hover,
-header .nav-link:focus {
-    background: rgba(0, 0, 0, 0.1); /* Add slight background on hover */
-    border-radius: 5px;
-    color: #2196f3; /* Change text color to blue */
-}
-
-/* Section Styles */
-section {
-    padding: 100px 20px 20px;
-    margin: 120px auto 50px; /* Adjust margin to account for fixed header */
-    max-width: 800px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #f4f4f4;
-    color: #555;
-}
-
-/* Award Image Styles */
-.award-image {
-    display: block;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border: 3px solid #2196f3;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.award-image:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Dynamic Background Image on Hover */
-header:hover {
-    background-blend-mode: overlay;
-    background-color: rgba(255, 255, 255, 0.1); /* Add light overlay effect */
-}
-
-/* Add styles for thesis.html */
-header h1 {
-    font-size: 2.5rem;
-    margin: 20px 0;
-}
-
-nav a {
-    color: #2196f3;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-    color: #1565c0;
-}
 /* Sidebar Common Styles */
 .left-sidebar, .right-sidebar {
-    position: fixed;
-    top: 100px;
+    position: absolute;
+    top: 120px; /* Start parallel to About Me section */
     width: 200px;
     padding: 20px;
     background: #f4f4f4;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    z-index: 100;
-    animation: blink 2s infinite; /* Blinking animation */
+    z-index: 1000; /* Ensure sidebars appear above main content */
+    animation: blink 2s infinite; /* Add blinking animation */
 }
 
 .left-sidebar {
-    left: 10px;
+    left: 20px;
 }
 
 .right-sidebar {
-    right: 10px;
+    right: 20px;
 }
 
 .left-sidebar h3, .right-sidebar h3 {
@@ -162,8 +66,8 @@ nav a:hover {
 
 .left-sidebar ul, .right-sidebar ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 .left-sidebar ul li, .right-sidebar ul li {
@@ -171,9 +75,9 @@ nav a:hover {
 }
 
 .left-sidebar ul li a, .right-sidebar ul li a {
-    color: #333;
     text-decoration: none;
     font-weight: bold;
+    color: #333;
     transition: color 0.3s ease;
 }
 
@@ -187,14 +91,24 @@ main {
     margin: 0 auto;
     max-width: 1200px;
     padding: 20px;
-    margin-left: 230px; /* Adjust for left sidebar */
-    margin-right: 230px; /* Adjust for right sidebar */
+    margin-left: 250px; /* Leave space for left sidebar */
+    margin-right: 250px; /* Leave space for right sidebar */
 }
 
 /* Blinking Animation */
 @keyframes blink {
-    0% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
-    100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4;
+    color: #555;
+}
