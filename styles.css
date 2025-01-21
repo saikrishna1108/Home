@@ -116,3 +116,21 @@ header:hover {
     background-blend-mode: overlay;
     background-color: rgba(255, 255, 255, 0.1); /* Add light overlay effect */
 }
+
+/* Add styles for thesis.html */
+header h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+nav a {
+    color: #2196f3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #1565c0;
+}
+
