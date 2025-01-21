@@ -88,11 +88,16 @@ header h1, header p, header nav {
 
 /* Main Content */
 main {
-    margin: 180px;
+    margin: 0 auto;
     max-width: 1200px;
     padding: 20px;
     margin-left: 250px; /* Leave space for left sidebar */
     margin-right: 250px; /* Leave space for right sidebar */
+    padding-top: 120px; /* Add padding to account for the fixed header */
+}
+
+section {
+    margin-bottom: 40px; /* Add spacing between sections */
 }
 
 /* Blinking Animation */
