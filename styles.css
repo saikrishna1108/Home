@@ -12,17 +12,41 @@ body {
 
 /* Header Styles */
 header {
-    background: #2196f3;
-    padding: 20px 0;
+    background: url('header-bg.jpg') no-repeat center center / cover; /* Add background image */
+    padding: 40px 20px;
     text-align: center;
-    color: white;
+    color: white; /* Ensure text is visible */
+    position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     letter-spacing: 1.2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for better visibility */
+}
+
+header p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+header a {
+    color: #bbdefb; /* Light color for email link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #e3f2fd;
+    text-decoration: underline;
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 20px;
 }
 
 nav a {
@@ -37,6 +61,7 @@ nav a {
 nav a:hover {
     color: #bbdefb;
 }
+
 
 /* Section Styles */
 section {
