@@ -49,3 +49,11 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.award-image {
+    width: 100px;
+    height: auto;
+    margin: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
