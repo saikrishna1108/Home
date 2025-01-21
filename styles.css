@@ -35,7 +35,6 @@ header::before {
 header h1, header p, header nav {
     position: relative;
     z-index: 2;
-    color: black;
 }
 
 /* Sidebar Common Styles */
@@ -89,7 +88,7 @@ header h1, header p, header nav {
 
 /* Main Content */
 main {
-    margin: 0 auto;
+    margin: auto;
     max-width: 1200px;
     padding: 20px;
     margin-left: 250px; /* Leave space for left sidebar */
