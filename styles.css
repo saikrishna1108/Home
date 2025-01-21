@@ -41,8 +41,8 @@ header h1, header p, header nav {
 /* Sidebar Common Styles */
 .left-sidebar, .right-sidebar {
     position: absolute;
-    top: 500px; /* Start parallel to About Me section */
-    width: 900px;
+    top: 250px; /* Start parallel to About Me section */
+    width: 200px;
     padding: 20px;
     background: #f4f4f4;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
