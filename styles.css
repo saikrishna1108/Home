@@ -5,7 +5,7 @@ body {
     padding: 0;
     background: linear-gradient(135deg, #e3f2fd, #bbdefb);
     color: #333;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Enable smooth scrolling for navigation links */
 }
 
 /* Header Styles */
@@ -13,52 +13,73 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: url('header-bg.jpg') no-repeat center center / cover;
+    background: url('header-bg.jpg') no-repeat center center / cover; /* Background image */
+    background-blend-mode: overlay; /* Overlay effect for dimness */
     color: white;
-    padding: 20px 0;
+    padding: 40px 0;
     z-index: 10;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Dim the background with white overlay */
+    z-index: 1;
+}
+
+header h1,
+header p,
+header nav {
+    position: relative;
+    z-index: 2; /* Ensure text is above the overlay */
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    color: black;
+    font-weight: bold;
+    color: black; /* Bright black text */
+    text-shadow: none; /* No shadow for cleaner look */
 }
 
 header p {
     margin: 5px 0;
     font-size: 1rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    color: black;
+    color: black; /* Bright black text */
 }
 
+/* Navigation Links */
 header nav {
     margin-top: 10px;
 }
 
 header .nav-link {
     margin: 0 10px;
-    color: white;
+    color: black; /* Bright black for navigation links */
     text-decoration: none;
     font-weight: bold;
     padding: 5px 10px;
     transition: all 0.3s ease;
-    color: black;
 }
 
-header .nav-link:hover, header .nav-link:focus {
-    background: rgba(255, 255, 255, 0.2);
+header .nav-link:hover,
+header .nav-link:focus {
+    background: rgba(0, 0, 0, 0.1); /* Add slight background on hover */
     border-radius: 5px;
-    color: yellow;
+    color: #2196f3; /* Change text color to blue */
 }
 
 /* Section Styles */
 section {
     padding: 100px 20px 20px;
-    margin: 100px auto 50px;
+    margin: 120px auto 50px; /* Adjust margin to account for fixed header */
     max-width: 800px;
     background: white;
     border-radius: 10px;
@@ -73,7 +94,25 @@ footer {
     color: #555;
 }
 
-/* Dynamic Background Image */
+/* Award Image Styles */
+.award-image {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border: 3px solid #2196f3;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.award-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Dynamic Background Image on Hover */
 header:hover {
     background-blend-mode: overlay;
+    background-color: rgba(255, 255, 255, 0.1); /* Add light overlay effect */
 }
