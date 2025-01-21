@@ -93,12 +93,20 @@ main {
     padding: 20px;
     margin-left: 250px; /* Leave space for left sidebar */
     margin-right: 250px; /* Leave space for right sidebar */
-    padding-top: 120px; /* Add padding to account for the fixed header */
+    padding-top: 160px; /* Increased padding to fully account for header height */
 }
 
 section {
     margin-bottom: 40px; /* Add spacing between sections */
 }
+
+/* Specific Adjustment for About Me Section */
+#about {
+    padding-top: 40px; /* Additional space for About Me content if needed */
+}
+
+
+
 
 /* Blinking Animation */
 @keyframes blink {
